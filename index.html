@@ -76,11 +76,11 @@
         // Basic responses
         const responses = {
             "hi": "Hello! How can I assist you today?",
-            "How can I lose weight": "Consider a balanced diet and regular exercise!",
+            "How can I lose weight": "Consider a balanced diet and regular exercise!Consider a balanced diet and regular exercise!",
             "What is functional fitness?": "Functional fitness trains your muscles to help you do everyday activities.",
             "Bye": "Goodbye! Have a great day!",
         };
-        return responses[message.toLowerCase()] || "I'm not sure how to respond to that. Try asking something else!";
+        return responses[message.toLowerCase()] || "Consider a balanced diet and regular exercise!Consider a balanced diet and regular exercise! ";
     }
 </script>
     <!-- swiper CSS cdn link  -->
@@ -93,8 +93,9 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
 </head>
+
 <body>
-    
+   
     <!-- header section starts  -->
 
     <header class="header">
@@ -118,7 +119,7 @@
     </header>
 
     <!-- header section ends  -->
-
+ 
     <!-- home section starts  -->
 
     <section class="home">
@@ -453,7 +454,17 @@
     </section>
 
     <!-- testimonial-->
-   
+    <div class="hero">
+        <h1>Text To Speech <span>Converter</span></h1>
+        <textarea placeholder="Write anything here..."></textarea>
+        <div class="row">
+            <select></select>
+            <button><img src="play.png" alt="Play"> Listen</button>
+        </div>
+    </div>
+    
+  
+         
     <!-- blogs section starts  -->
 
     <section class="blogs">
@@ -532,6 +543,7 @@
     </section>
 
     <!-- blogs section ends  -->
+    
 <!-- Our team section starts -->
 
 <title>Our Team</title>
