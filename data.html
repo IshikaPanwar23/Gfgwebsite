@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PulsePower</title>
+    <title>SweatSaathi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #chatbot {
+            width: 300px;
+            height: 100px;
+            border: 1px solid #ccc;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        #chatbox {
+            height: 90%;
+            overflow-y: auto;
+            padding: 10px;
+        }
+        #user-input {
+            display: flex;
+        }
+        #user-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        #user-input button {
+            padding: 10px;
+            border: none;
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div id="chatbot">
+    <div id="chatbox"></div>
+    <div id="user-input">
+        <input type="text" id="userMessage" placeholder="Type your message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+<!-- <div id="chatbox">
+    <div><img src="fitbuddy-icon.png" alt="SweatSaathi" style="width:20px; vertical-align: middle;"> </div>
+</div> -->
+<script>
+    function sendMessage() {
+        const userInput = document.getElementById("userMessage");
+        const message = userInput.value;
+        if (message.trim() === "") return;
+
+        const chatbox = document.getElementById("chatbox");
+        chatbox.innerHTML += `<div>User: ${message}</div>`;
+
+        // Simulated response from the chatbot
+        const response = getResponse(message);
+        chatbox.innerHTML += `<div>Chatbot: ${response}</div>`;
+        
+        // Clear input field
+        userInput.value = "";
+        chatbox.scrollTop = chatbox.scrollHeight; // Auto-scroll to bottom
+    }
+
+    function getResponse(message) {
+        // Basic responses
+        const responses = {
+            "hi": "Hello! How can I assist you today?",
+            "How can I lose weight": "Consider a balanced diet and regular exercise!Consider a balanced diet and regular exercise!",
+            "What is functional fitness?": "Functional fitness trains your muscles to help you do everyday activities.",
+            "Bye": "Goodbye! Have a great day!",
+        };
+        return responses[message.toLowerCase()] || "Consider a balanced diet and regular exercise!Consider a balanced diet and regular exercise! ";
+    }
+</script>
+    <!-- swiper CSS cdn link  -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+
+    <!-- custom CSS file link  -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font awesome cdn link  -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+</head>
+
+<body>
+   
+    <!-- header section starts  -->
+
+    <header class="header">
+
+        <a href="#" class="logo">PulsePower</span></a>
+
+        <nav class="navbar">
+            <a href="#">home</a>
+            <a href="#">about</a>
+            <a href="#">services </a> 
+            <a href="#">news</a>
+            <a href="#">contact</a>
+        </nav>
+
+
+        <div class="icons">
+            <a href="#" class="btn">Become a memeber</a>
+            <div id="menu-btn" class="fas fa-bars"></div>
+        </div>
+
+    </header>
+
+    <!-- header section ends  -->
+ 
+    <!-- home section starts  -->
+
+    <section class="home">
+
+        <div class="swiper home-slider">
+
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide box" style="background:linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)), url(images/home-1.jpeg);">
+                    <div class="content">
+                        <h3>join pulsepower today</h3>
+                        <p>PulsePower is a modern fitness website offering personalized training programs tailored to meet individual fitness goals</p>
+                        <div class="button">
+                            <a href="#" class="btn btn-1">get started</a>
+                            <a href="#" class="btn">download</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box" style="background: linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)), url(images/home-2.jpeg);">
+                    <div class="content">
+                        <h3>health is wealth</h3>
+                        <p>PulsePower positions itself as a holistic fitness solution, emphasizing personalization, user-friendliness, and results-driven training programs.</p>
+                        <div class="button">
+                            <a href="#" class="btn btn-1">get started</a>
+                            <a href="#" class="btn">download</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- home section ends  -->
+
+    <!-- featured section starts  -->
+
+    <section class="feature">
+
+        <h1 class="heading"> Featured <span>Classes</span></h1>
+
+        <div class="swiper feature-slider">
+
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide box">
+                    <div class="image">
+                        <img src="https://perform-better.com.au/wp-content/uploads/2018/01/FUNCTIONAL-TRAINING-WHAT-IS-IT-WHY-SHOULD-I-DO-IT.jpg.webp" alt="">
+                    </div>
+                    <div class="content">
+                        <div class="price">₹2500/M</div>
+                        <h3>Functional Fitness</h3>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="image">
+                        <img src="https://images.squarespace-cdn.com/content/v1/5b9959ce9772aeee9d242edc/1599072380054-3SRFANBD8DZMJ5K6LJCC/spinning.jpg?format=1500w" alt="">
+                    </div>
+                    <div class="content">
+                        <div class="price">₹1500/M</div>
+                        <h3>Spin & Cycling</h3>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="image">
+                        <img src="https://yoga.ae/wp-content/uploads/2023/02/Pilates-Refromaer_1.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <div class="price">₹3000/M</div>
+                        <h3>Yoga & Pilates Class</h3>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="image">
+                        <img src="https://i0.wp.com/www.opindia.com/wp-content/uploads/2018/06/Differently_abledYoga21.jpg?w=600&ssl=1" alt="">
+                    </div>
+                    <div class="content">
+                        <div class="price">₹2000/M</div>
+                        <h3>Special Yoga Class For Differently Abled</h3>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="image">
+                        <img src="https://yogahubonlinestudio.com/wp-content/uploads/2023/11/core-power-yoga-30-mins-vimeo-thumbnail.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <div class="price">₹1750/M</div>
+                        <h3>Core Power</h3>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- featured section ends  -->
+
+    <!-- Schedule section starts  -->
+
+    <section class="schedule">
+
+        <h1 class="heading"><span>our</span> schedule</h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <div class="content">
+                    <h3>Functional Fitness</h3>
+                    <p>It  focuses on exercises that mimic everyday movements, aiming to improve overall strength, balance, coordination, and flexibility.</p>
+                </div>
+                <div class="icons">
+                    <span><i class="far fa-clock"></i> 5:30 PM</span>
+                    <span><i class="fad fa-calendar-alt"></i>october 20, 2024</span>
+                </div>
+                <a href="#" class="btn">Join Form </a>
+            </div>
+            
+            <div class="box">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwK4kGdRGVPWkAOnj_qWk2um9Ck_bzDZMSxQ&s" alt="">
+            </div>
+
+            <div class="box">
+                <div class="content">
+                    <h3>Spin & Cycling</h3>
+                    <p>These classes take place on stationary bikes, with participants guided by an instructor through a series of intervals, sprints, and resistance changes that simulate outdoor cycling.</p>
+                </div>
+                <div class="icons">
+                    <span><i class="far fa-clock"></i> 5:30 PM</span>
+                    <span><i class="fad fa-calendar-alt"></i>october 24, 2024</span>
+                </div>
+                <a href="#" class="btn">Join Form</a>
+            </div>
+
+            <div class="box">
+                <img src="https://th-i.thgim.com/public/migration_catalog/article14125275.ece/alternates/FREE_1200/26MP_PEDEALBEAT2" alt="">
+            </div>
+
+            <div class="box">
+                <img src="https://content.jdmagicbox.com/v2/comp/delhi/p4/011pxx11.xx11.190806102152.l4p4/catalogue/yoga-planet-india-delhi-cantt-station-road-delhi-yoga-classes-ciy5kzg445-250.jpg" alt="">
+            </div>
+
+            <div class="box">
+                <div class="content">
+                    <h3>Yoga & Pilates</h3>
+                    <p>Fitness practices that focus on strength, flexibility, balance, and mind-body connection</p>
+                </div>
+                <div class="icons">
+                    <span><i class="far fa-clock"></i> 5:30 PM</span>
+                    <span><i class="fad fa-calendar-alt"></i>october 22, 2024</span>
+                </div>
+                <a href="#" class="btn">Join Form</a>
+            </div>
+
+            <div class="box">
+                <img src="https://assets.telegraphindia.com/telegraph/02570cb7-0d76-4b2e-b033-b6eb5444994f.jpg" alt="">
+            </div>
+
+            <div class="box">
+                <div class="content">
+                    <h3>Special Yoga Class For Differently Abled</h3>
+                    <p>It is designed to provide a supportive and adaptive environment where participants can experience the benefits of yoga, regardless of physical or cognitive limitations.</p>
+                </div>
+                <div class="icons">
+                    <span><i class="far fa-clock"></i> 5:30 PM</span>
+                    <span><i class="fad fa-calendar-alt"></i>october 23, 2024</span>
+                </div>
+                <a href="#" class="btn">Join Form</a>
+            </div>
+            
+            <div class="box">
+                <div class="content">
+                    <h3>Core Power</h3>
+                    <p>This focus on building core strength, enhancing overall power, and improving athletic performance through targeted exercises.</p>
+                </div>
+                <div class="icons">
+                    <span><i class="far fa-clock"></i> 5:30 PM</span>
+                    <span><i class="fad fa-calendar-alt"></i>october 25, 2024</span>
+                </div>
+                <a href="#" class="btn">Join Form </a>
+            </div>
+            
+            <div class="box">
+                <img src="https://vhx.imgix.net/corepoweryogaondemand/assets/1c4d884c-064f-48f7-87e0-d522c7400fb0-7346ffbb.jpg?auto=format%2Ccompress&fit=crop&h=720&q=75&w=1280" alt="">
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Schedule section ends  -->
+
+    <!-- trainer section starts  -->
+
+    <section class="trainers">
+
+        <h1 class="heading">Expert <span>trainers</span></h1>
+
+        <div class="swiper trainer-slider">
+
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide box">
+                    <div class="image">
+                        <img src="https://www.shutterstock.com/image-photo/portrait-shot-gym-trainer-coach-260nw-2125906217.jpg" alt="">
+                    </div>
+                    <div class="name">
+                        <h1>Rahul Dedha</h1>
+                        <p>Functional Fitness trainer</p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="image">
+                        <img src="https://static.toiimg.com/thumb/msid-92461588,width-400,resizemode-4/92461588.jpg" alt="">
+                    </div>
+                    <div class="name">
+                        <h1>Anmol Sachdeva</h1>
+                        <p>Yoga & Pilates trainer</p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="image">
+                        <img src="https://content.jdmagicbox.com/comp/sonepat/u1/9999px130.x130.160105230007.q2u1/catalogue/personal-trainer-certified-by-gold-s-gym-india-sonepat-gym-personal-trainers-2zbqb.jpg" alt="">
+                    </div>
+                    <div class="name">
+                        <h1>Ankit</h1>
+                        <p>Spin & Cycling trainer</p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="image">
+                        <img src="https://static.vecteezy.com/system/resources/thumbnails/046/837/002/small/confident-senior-indian-female-fitness-trainer-in-gym-environment-promoting-wellness-and-active-lifestyle-photo.jpg" alt="">
+                    </div>
+                    <div class="name">
+                        <h1>Reetu</h1>
+                        <p>Special Yoga trainer</p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="image">
+                        <img src="https://media.istockphoto.com/id/1155234248/photo/fitness-instructor-standing-at-a-fitness-centre-and-smiling-at-the-camera.jpg?s=612x612&w=0&k=20&c=nE6WTfZittd--4njSf3II-m54OhrbXnVIQ1NIjuHInA=" alt="">
+                    </div>
+                    <div class="name">
+                        <h1>Lalit</h1>
+                        <p>Core trainer</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- trainer section ends  -->
+
+    <!-- testimonial section starts  -->
+
+    <section class="testimonial">
+
+        <h1 class="heading">testimonial of our trainers</h1>
+
+        <div class="box-container"{
+            display: flex;
+    flex-wrap: wrap; 
+    gap: 20px;
+        }>
+
+            <div class="box">
+                <div class="image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGecKTCsRibttBwrp6JQH_Y05lkr9KVP6ziw&s" alt="">
+                </div>
+                <div class="name">
+                    <h1>Rahul</h1>
+                </div>
+                <p>At PulsePower, our Functional Fitness Trainer embodies the highest standards of fitness coaching.He specializes in Personalization, Injury Prevention and Recovery Expertiseand Functional Movement.</p>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="https://images.picxy.com/cache/2020/11/27/9ca58493d719a0a07f1e27c3f2950ca4.jpg" alt="">
+                </div>
+                <div class="name">
+                    <h1>Lalit</h1>
+                </div>
+                <p>Core and Power Trainer effective in helping clients develop strength, explosiveness, and overall fitness.</p>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="https://sportsmatik.com/uploads/users-media/profile-pic/madhur_1643874593.jpg" alt="">
+                </div>
+                <div class="name">
+                    <h1>Ankit</h1>
+                </div>
+                <p>The key attributes of our Spin and Cycling Trainer, focusing on cardiovascular improvement, motivation, and personalized training plans. Let me know if you need any modifications!</p>
+            </div>
+
+
+            <div class="box">
+                <div class="image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj9MP9Ha240K4aG1Dw1FX3yB9g7y584-p1qQ&s" alt="">
+                </div>
+                <div class="name">
+                    <h1>Anmol Sachdeva</h1>
+                </div>
+                <p>The balanced, holistic approach of our Yoga and Pilates Trainer, emphasizing flexibility, strength, and mindfulness.</p>
+            </div>
+            
+            <div class="box">
+                <div class="image">
+                    <img src="https://static.vecteezy.com/system/resources/thumbnails/046/837/002/small/confident-senior-indian-female-fitness-trainer-in-gym-environment-promoting-wellness-and-active-lifestyle-photo.jpg" alt="">
+                </div>
+                <div class="name">
+                    <h1>Reetu</h1>
+                </div>
+                <p>Our certified Special Yoga Trainer "Ms Reetu" is highly experienced in adaptive yoga techniques that cater to the unique physical and cognitive needs of each individual, ensuring a safe, supportive, and empowering practice for all abilities.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- testimonial-->
+   
+  
+         
+    <!-- blogs section starts  -->
+
+    <section class="blogs">
+
+        <h1 class="heading">our <span>blogs</span></h1>
+
+        <div class="swiper blogs-slider">
+
+            <div class="swiper-wrapper">
+
+                
+                <div class="swiper-slide box">
+                    <div class="image">
+                        <img src="https://media.istockphoto.com/id/1266586011/photo/go-to-gym-stay-healthy-people-going-to-gym-trainer-giving-right-guidance.jpg?s=612x612&w=0&k=20&c=qCzPNzCoaxwLNwcif2egCqveV5zk3gPnE3FV26YKo0A=" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>Yoga class</h3>
+                        <span><i class="fad fa-calendar-alt"></i>september 20, 2024</span>
+                        <p>The woman’s expression is one of focus and tranquility, embodying the essence of mindfulness and balance in her practice.The atmosphere is calm and peaceful, with gym flooring and machines in the background. 
+
+                        </p>
+                    </div>
+                    <div class="button">
+                        <a href="#" class="btn">Read more</a>
+                    </div>
+                </div>
+
+                
+                <div class="swiper-slide box">
+                    <div class="image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn5xkCeKvY8HQDk9VOGtrkb9HqVTM_ZMOrPA&s" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>Core and fitness</h3>
+                        <span><i class="fad fa-calendar-alt"></i>july 23, 2024</span>
+                        <p> The man, who is focused and determined, is positioned on a workout bench, holding a dumbbell in each hand while engaging in a core-strengthening exercise seated dumbbell press.</p>
+                    </div>
+                    <div class="button">
+                        <a href="#" class="btn">Read more</a>
+                    </div>
+                </div>
+
+            </head>
+            <body>
+               
+                <div class="swiper-slide box">
+                    <div class="image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdWxPrl7ad2PcPrJ9Ot_QOTcNNNSMi7IReKg&s" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>Specially abled kids workout</h3>
+                        <span><i class="fad fa-calendar-alt"></i>july 30, 2024</span>
+                        <p>In a bright and welcoming gym designed for inclusivity, a group of specially abled kids is enthusiastically participating in a fun and engaging workout session.</p>
+                    </div>
+                    <div class="button">
+                        <a href="#" class="btn">Read more</a>
+                    </div>
+                </div>
+
+                <!-- <div class="swiper-slide box">
+                    <div class="image">
+                        <img src="images/blog-4.jpeg" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>Fitness class name here</h3>
+                        <span><i class="fad fa-calendar-alt"></i>april 22, 2021</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium dolorem qui asperiores quas, molestiae aspernatur.</p>
+                    </div>
+                    <div class="button">
+                        <a href="#" class="btn">Read more</a>
+                    </div>
+                </div> -->
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- blogs section ends  -->
+    <body>
+        <div>
+            <p id="textToRead">
+                Welcome to our website! We offer the best services for your needs.
+            </p>
+            <input type="text" id="inputText" placeholder="Type your message here" />
+            <button id="readAloudButton" onclick="speakText()">Read Aloud</button>
+        </div>
+    
+        <style>
+            /* Style the input field */
+            #inputText {
+                padding: 10px;
+                font-size: 16px;
+                width: 100%;
+                margin-bottom: 20px;
+                border: 2px solid #ccc;
+                border-radius: 5px;
+            }
+    
+            /* Style the button */
+            #readAloudButton {
+                background-color: #4CAF50; /* Green background */
+                color: white;             /* White text */
+                padding: 15px 20px;       /* Padding for size */
+                font-size: 18px;          /* Font size */
+                border: none;             /* Remove borders */
+                border-radius: 5px;       /* Rounded corners */
+                cursor: pointer;          /* Pointer cursor on hover */
+                transition: background-color 0.3s ease; /* Smooth hover effect */
+            }
+    
+            /* Change button color on hover */
+            #readAloudButton:hover {
+                background-color: #45a049; /* Darker green */
+            }
+        </style>
+    
+        <script>
+            function speakText() {
+                var paragraphText = document.getElementById("textToRead").innerText;
+                var inputText = document.getElementById("inputText").value;
+                var combinedText = paragraphText + " " + inputText;
+                var speech = new SpeechSynthesisUtterance(combinedText);
+                window.speechSynthesis.speak(speech);
+            }
+        </script>
+    </body>
+<!-- Our team section starts -->
+
+<title>Our Team</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="team-section">
+    <h1>Meet Our Team</h1>
+    <div class="team-member">
+        <img src="images/saara.jpeg" alt="saara photo" width="187.88" height="334">
+        <h2>Saara Sugandh</h2>
+        <H3>Sophomore at IGDTUW </H3>
+        
+    </div>
+    <div class="team-member">
+        <img src="images/ishika.jpeg" alt="ishika photo" width="205.88" height="360">
+        <h2>Ishika Panwar</h2>
+        <H3>Sophomore at IGDTUW </H3>
+    </div>
+    <div class="team-member">
+        <img src="images/riya.jpeg" alt="riya photo" width="274.5" height="366">
+        <h2>Riya</h2>
+        <H3>Sophomore at IGDTUW </H3> 
+    </div>
+</div>
+<!-- Our team section ends -->
+    <!-- footer section starts  -->
+
+    <section class="footer">
+
+        <div class="box-container">
+
+            <div class="box">
+                <h1>about</h1>
+                <div class="text">
+                    <p>Welcome to PulsePower, we specialize in functional fitness, strength and core training, and personalized workout and yoga plans designed to help you reach your fitness goals, whether it’s improving strength, losing weight, or enhancing flexibility.We are proud to offer inclusive fitness programs tailored to the needs of differently-abled individuals, ensuring that everyone, regardless of ability, can experience the transformative power of movement.
+At PulsePower, we believe in a results-driven approach to fitness. Every individual is unique, and so are their fitness needs. That’s why our programs are customized to suit your body, fitness level, and lifestyle. From functional fitness to one-on-one coaching, we provide everything you need to succeed in your fitness journey.</p>
+                </div>
+                <div class="icon">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="box">
+                <h1>contact info</h1>
+                <div class="icons">
+                    <a href="#"><i class="fas fa-map-marker-alt"></i>Delhi, India </a>
+                    <a href="#"><i class="fas fa-phone-alt"></i>+011 243574</a>
+                    <a href="#"><i class="fas fa-envelope"></i>pulsepower@gmail.com</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <h1>Quick links</h1>
+                <div class="icons">
+                    <a href="#">home</a>
+                    <a href="#">about</a>
+                    <a href="#">services</a>
+                    <a href="#">news</a>
+                    <a href="#">contact</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="credit">created by <span>byte me</span> | all right reserved</div>
+
+    </section>
+
+    <!-- footer section ends  -->
+    <!-- swiper JS cdn link  -->
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script> 
+
+
+    <!-- Custom JS file link  -->
+    <script src="script.js"></script>
+</body>
+</html>
