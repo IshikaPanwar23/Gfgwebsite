@@ -454,15 +454,7 @@
     </section>
 
     <!-- testimonial-->
-    <div class="hero">
-        <h1>Text To Speech <span>Converter</span></h1>
-        <textarea placeholder="Write anything here..."></textarea>
-        <div class="row">
-            <select></select>
-            <button><img src="play.png" alt="Play"> Listen</button>
-        </div>
-    </div>
-    
+   
   
          
     <!-- blogs section starts  -->
@@ -507,7 +499,9 @@
                     </div>
                 </div>
 
-              
+            </head>
+            <body>
+               
                 <div class="swiper-slide box">
                     <div class="image">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdWxPrl7ad2PcPrJ9Ot_QOTcNNNSMi7IReKg&s" alt="">
@@ -543,7 +537,54 @@
     </section>
 
     <!-- blogs section ends  -->
+    <body>
+        <div>
+            <p id="textToRead">
+                Welcome to our website! We offer the best services for your needs.
+            </p>
+            <input type="text" id="inputText" placeholder="Type your message here" />
+            <button id="readAloudButton" onclick="speakText()">Read Aloud</button>
+        </div>
     
+        <style>
+            /* Style the input field */
+            #inputText {
+                padding: 10px;
+                font-size: 16px;
+                width: 100%;
+                margin-bottom: 20px;
+                border: 2px solid #ccc;
+                border-radius: 5px;
+            }
+    
+            /* Style the button */
+            #readAloudButton {
+                background-color: #4CAF50; /* Green background */
+                color: white;             /* White text */
+                padding: 15px 20px;       /* Padding for size */
+                font-size: 18px;          /* Font size */
+                border: none;             /* Remove borders */
+                border-radius: 5px;       /* Rounded corners */
+                cursor: pointer;          /* Pointer cursor on hover */
+                transition: background-color 0.3s ease; /* Smooth hover effect */
+            }
+    
+            /* Change button color on hover */
+            #readAloudButton:hover {
+                background-color: #45a049; /* Darker green */
+            }
+        </style>
+    
+        <script>
+            function speakText() {
+                var paragraphText = document.getElementById("textToRead").innerText;
+                var inputText = document.getElementById("inputText").value;
+                var combinedText = paragraphText + " " + inputText;
+                var speech = new SpeechSynthesisUtterance(combinedText);
+                window.speechSynthesis.speak(speech);
+            }
+        </script>
+    </body>
 <!-- Our team section starts -->
 
 <title>Our Team</title>
